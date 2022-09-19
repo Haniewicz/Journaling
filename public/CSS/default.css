@@ -3,6 +3,7 @@ body
     margin: 0;
     padding: 0;
     color: #5a5a5a;
+    font-family: "Rubik", sans-serif;
 }
 
 .container-fluid
@@ -17,10 +18,24 @@ body
     text-align: center;
     padding-bottom: 10px;
     font-size: 19px;
+    background-color: #777;
 }
 
 
 .navbar-brand, .nav-link
 {
     color: #fff;
+}
+
+.columns-row
+{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+.possibility-header
+{
+    border-radius: 20px;
+    border: 1px solid black;
 }
