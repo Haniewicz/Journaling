@@ -2,8 +2,14 @@ body
 {
     margin: 0;
     padding: 0;
-    color: #5a5a5a;
-    font-family: "Rubik", sans-serif;
+    color: white;
+    background-color: #5a5a5a;
+    font-family: "Saira", sans-serif;
+}
+
+.bg-yellow
+{
+    background-color: #6159de;
 }
 
 .container-fluid
@@ -11,16 +17,65 @@ body
     margin: 0;
 }
 
-.informator
+hr
 {
-    padding-top: 10px;
-    color: #fff;
-    text-align: center;
-    padding-bottom: 10px;
-    font-size: 19px;
-    background-color: #777;
+    border-width: 2px;
+
 }
 
+p
+{
+    font-size: 18px;
+}
+
+.informator
+{
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    background-color: #DEA359;
+}
+
+.benefits h4
+{
+    margin-bottom: 15px;
+}
+
+.vertical-line-left
+{
+    border-left: 2px solid white;
+}
+
+h2
+{
+    font-family: "PlayFair", serif;
+    font-weight: bold;
+}
+
+.banner
+{
+    font-family: "PlayFair", serif;
+    font-size: 4rem !important;
+    font-weight: bold;
+    display: inline-block;
+    width: auto;
+    padding: 50px;
+    letter-spacing: 10px;
+    padding-left: 150px;
+    padding-right: 150px;
+    border: 7px solid #fff;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+
+@media (max-width: 800px) {
+  .banner {
+    font-size: 1.5rem !important;
+    padding: 20px;
+    margin: 10px;
+  }
+}
 
 .navbar-brand, .nav-link
 {
@@ -34,8 +89,18 @@ body
     padding-bottom: 10px;
 
 }
+
+.title-divider
+{
+    border-style: solid;
+    border-width: 3px;
+    border-color: white;
+    border-radius: 20px;
+}
+
 .possibility-header
 {
     border-radius: 20px;
-    border: 1px solid black;
+    color: #998ed2;
+    border: 1px solid #dc3545;
 }

@@ -1,0 +1,29 @@
+form
+{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: black;
+    padding: 15px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+input
+{
+    width: 100%;
+    margin-bottom: 10px;
+}
+textarea
+{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+button
+{
+    width: 100%;
+}
