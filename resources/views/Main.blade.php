@@ -17,7 +17,7 @@
     <header>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="#">Journaling</a>
+                <a class="navbar-brand" href="/">Journaling</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -28,7 +28,13 @@
 
                     </ul>
                     <div class="d-flex" role="search">
-                        <a href="/login" class="btn btn-outline-success">Zaloguj się</a>
+                        @guest
+                            <a href="/login" class="btn btn-outline-success">Zaloguj się</a>
+                        @endguest
+                        @auth
+                            <a href="/dashboard" class="btn btn-outline-success" style="margin-right: 5px;">Panel użytkownika</a>
+                            <a href="/logout" class="btn btn-outline-danger">Wyloguj się</a>
+                        @endauth
                     </div>
                 </div>
             </div>
@@ -37,7 +43,7 @@
 
     @yield('content')
 
-    
+
     <div class="informator">
         <div class="container">
             © 2022 Journaling.pl <a href="/privacy">Polityka prywatności</a>

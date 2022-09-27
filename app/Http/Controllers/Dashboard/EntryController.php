@@ -1,21 +1,28 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Dashboard;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\LoginPostRequest;
+use App\Services\entry\StoreService;
+use App\Http\Requests\entry\StoreRequest;
+use Auth;
 
+use App\Models\Entry;
+use App\Models\Category;
 
-class RegisterController extends Controller
+class EntryController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($category_id)
     {
-        //
+        $data = Auth::User()->GetEntries->WHERE('category_id', $category_id);
+        $data = Entry::WHERE('user_id', Auth::User()->id)->WHERE('category_id', $category_id)->get();
+        return view('dashboard.entry.index')->with('data', $data);
     }
 
     /**
@@ -23,9 +30,20 @@ class RegisterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($category_id)
     {
-        return view("Main.register");
+        $data = Category::WHERE('id', $id)->first();
+        if($data != null)
+        {
+            if($data->user_id == Auth::User()->id || $data->user_id == '')
+            {
+                return view('dashboard.entry.create')->with('data', $data);
+            }else{
+                return redirect()->back();
+            }
+        }else{
+            return redirect()->back();
+        }
     }
 
     /**
@@ -34,14 +52,14 @@ class RegisterController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(RegisterPostRequest $request, RegisterService $registerService)
+    public function store(StoreRequest $request, StoreService $storeService)
     {
         $data = $request->all();
-        if($registerService->handle($data))
+        if($storeService->handle($data))
         {
-            return view('User.dashboard');
+            return redirect()->back()->with('Success', 'Dodano wpis');
         }else{
-            return redirect()->back;
+            return redirect('/dashboard');
         }
     }
 

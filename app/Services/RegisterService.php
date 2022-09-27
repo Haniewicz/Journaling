@@ -9,9 +9,6 @@ class RegisterService
 {
     function handle($data)
     {
-        //Function used to insert new user into database
-    function handle($data)
-    {
         //Inserting user into database
         $insert = User::create([
             'name' => $data['name'],
@@ -29,7 +26,6 @@ class RegisterService
 
 
         return $response;
-    }
     }
 }
 

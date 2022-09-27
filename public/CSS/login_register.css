@@ -12,6 +12,16 @@ form
 
 }
 
+#remember_me
+{
+    text-align: center;
+}
+
+#remember
+{
+    width:auto;
+}
+
 input
 {
     width: 100%;
